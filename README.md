@@ -2,8 +2,6 @@
 
 **MultiCDNSafeLoader** 是一个基于 JavaScript 的资源加载器，支持多 CDN 备份自动切换，配合 Subresource Integrity (SRI) 校验，确保资源安全、可靠且稳定加载。
 
----
-
 ## 功能特点
 
 - 多个 CDN 地址按优先级顺序自动尝试加载资源  
@@ -12,8 +10,6 @@
 - 自动检测加载失败，切换至备用 CDN  
 - 支持本地资源和 CDN 资源统一管理  
 - 保证 JavaScript 按顺序执行，避免依赖冲突  
-
----
 
 ## 使用方法
 
@@ -46,13 +42,9 @@
 
 2. 在页面中引入 `MultiCDNSafeLoader` 脚本，加载并使用该配置
 
----
-
 ## 示例
 
 请参考仓库中的 `example.html`，里面包含完整示例代码。
-
----
 
 ## 许可证
 
