@@ -74,9 +74,9 @@ async function loadResource(cdnPrefixes, suffix, sri, useCdn) {
             el.async = false;
         }
         
-        const loadPromise = new Promise(resolve => {
+        const loadPromise = new Promise((resolve, reject) => {
             el.onload = () => resolve(true);
-            el.onerror = () => resolve(false);
+            el.onerror = () => reject(false);
         });
         
         document.head.appendChild(el);
@@ -85,7 +85,7 @@ async function loadResource(cdnPrefixes, suffix, sri, useCdn) {
             await loadPromise;
             console.log(`✅ 加载成功: ${suffix}`);
         } catch {
-            console.warn(`❌ 加载失败 ${suffix}`);
+            console.warn(`❌ 加载失败: ${url}`);
         }
         return;
     }
